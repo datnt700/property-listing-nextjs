@@ -1,13 +1,8 @@
 import styles from './Tab.module.scss';
-
-interface Tab {
-  label: string;
-  id: string;
-  onClick: () => void;
-}
+import { TapType } from '../interfaces/TapType';
 
 interface TabProps {
-  tabs: Tab[];
+  tabs: TapType[];
   tapChecked: string;
 }
 

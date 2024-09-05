@@ -3,18 +3,7 @@ import { Card } from '../components/Card';
 import { NavBar } from '../components/NavBar';
 import styles from './Home.module.scss';
 import { useEffect, useState } from 'react';
-
-interface CardType {
-  id: number;
-  image: string;
-  title: string;
-  description: string;
-  capacity: { bedroom: number; people: number };
-  location: string;
-  price: number;
-  rating: number;
-  superhost: boolean;
-}
+import { CardType } from '../interfaces/CardType';
 
 export default function Home() {
   const [tabChecked, setTabChecked] = useState<string>('All');

@@ -2,15 +2,10 @@ import styles from './NavBar.module.scss';
 import { Tab } from './Tab';
 import { ButtonSwitch } from './ButtonSwitch';
 import { Dropdown } from './Dropdown';
-
-interface Tab {
-  label: string;
-  id: string;
-  onClick: () => void;
-}
+import { TapType } from '../interfaces/TapType';
 
 interface NavBarProps {
-  tabs: Tab[];
+  tabs: TapType[];
   tabChecked: string;
   isActive: boolean;
   handleSwitchButton: () => void;
