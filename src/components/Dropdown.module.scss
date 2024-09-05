@@ -1,0 +1,40 @@
+$white-color: #f2f9fe;
+@mixin media-min($_min-width) {
+  @media screen and (min-width: $_min-width) {
+    & {
+      @content;
+    }
+  }
+}
+.drop-list {
+  position: relative;
+  display: inline-block;
+}
+.drop-select {
+  background-color: transparent;
+  padding: 0.5rem 1rem;
+  border-color: #97a3b6;
+  border-radius: 0.6rem;
+  color: $white-color;
+  outline: none;
+  background-position-x: 10px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 100%;
+  @include media-min(1024px) {
+    font-size: 0.875rem;
+  }
+}
+
+.arrow-icon {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-right: 0.2em solid $white-color;
+  border-top: 0.2em solid $white-color;
+  transform: rotate(135deg);
+}

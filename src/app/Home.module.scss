@@ -1,0 +1,74 @@
+@mixin media-min($_min-width) {
+  @media screen and (min-width: $_min-width) {
+    & {
+      @content;
+    }
+  }
+}
+
+.container {
+  background-image: url('../../public/hero-image.jpg');
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100% 100%;
+  height: 250px;
+  padding: 0 1rem;
+  @include media-min(1024px) {
+    height: 400px;
+    padding: 0 6rem;
+  }
+}
+
+.intro {
+  padding: 5rem 0 0 0;
+  max-width: 400px;
+  @include media-min(1024px) {
+    max-width: 500px;
+    padding: 4rem 0 8rem 4rem;
+  }
+
+  .title {
+    font-size: 3rem;
+    width: 100%;
+    @include media-min(1024px) {
+      font-size: 4rem;
+    }
+  }
+  .text {
+    font-weight: bold;
+    font-size: 1.2rem;
+    @include media-min(1024px) {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.content {
+  margin-top: 3rem;
+  padding: 0 2rem 8rem;
+  @include media-min(640px) {
+    padding: 0 6rem 8rem;
+  }
+  @include media-min(1024px) {
+    padding: 0 0 8rem;
+  }
+  .sous-title {
+    font-size: 1.5rem;
+    color: #f2f9fe;
+    margin-bottom: 2rem;
+  }
+
+  .card-list {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 12.5rem;
+    @include media-min(1024px) {
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 12.5rem;
+      column-gap: 4rem;
+    }
+    @include media-min(1280px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
