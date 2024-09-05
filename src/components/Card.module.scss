@@ -1,0 +1,100 @@
+$white-color: #f2f9fe;
+$gray-dark-color: #4a5567;
+
+@mixin media-min($_min-width) {
+  @media screen and (min-width: $_min-width) {
+    & {
+      @content;
+    }
+  }
+}
+
+.card {
+  height: 20rem;
+}
+
+.header {
+  width: 100%;
+  position: relative;
+  img {
+    width: 100%;
+    height: 10rem;
+    border-top-left-radius: 0.6rem;
+    border-top-right-radius: 0.6rem;
+  }
+
+  .label {
+    color: $white-color;
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    padding: 0.3rem 0.6rem;
+    background-color: #20293a;
+    border-radius: 1.2rem;
+    font-size: 0.625rem;
+  }
+}
+
+.content {
+  border-bottom: 0.5px solid $gray-dark-color;
+  border-right: 0.5px solid $gray-dark-color;
+  border-left: 0.5px solid $gray-dark-color;
+  border-bottom-left-radius: 1.2rem;
+  border-bottom-right-radius: 1.2rem;
+
+  .info {
+    padding: 1.2rem 1rem 0;
+    .title {
+      color: $white-color;
+      font-size: 1rem;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+    .description {
+      color: $gray-dark-color;
+      font-size: 0.875rem;
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+.quantity {
+  display: flex;
+  color: $gray-dark-color;
+  gap: 1rem;
+  font-size: 0.75rem;
+  .item {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+}
+
+.line {
+  width: 100%;
+  border-bottom: 1px solid $gray-dark-color;
+}
+
+.footer {
+  padding: 1.2rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .price {
+    font-size: 1.5rem;
+    color: $white-color;
+
+    span {
+      font-size: 1rem;
+      color: $gray-dark-color;
+    }
+  }
+  .rating {
+    display: flex;
+    gap: 0.3rem;
+    align-items: center;
+    span {
+      color: $white-color;
+    }
+  }
+}

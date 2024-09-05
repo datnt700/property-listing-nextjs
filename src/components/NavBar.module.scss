@@ -1,0 +1,44 @@
+@mixin media-min($_min-width) {
+  @media screen and (min-width: $_min-width) {
+    & {
+      @content;
+    }
+  }
+}
+.nav-container {
+  width: 100%;
+}
+
+.nav-content {
+  padding: 1.5rem;
+  background-color: #20293a;
+  border-radius: 0.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  @include media-min(1024px) {
+    flex-direction: row;
+  }
+}
+
+.nav-button {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  @include media-min(1024px) {
+    justify-content: flex-end;
+    gap: 2rem;
+  }
+
+  span {
+    color: #f2f9fe;
+    font-size: 0.75rem;
+    @include media-min(1024px) {
+      font-size: 0.875rem;
+    }
+  }
+}
