@@ -90,20 +90,22 @@ export default function Home() {
       <div className={styles.content}>
         {error && <p style={{ color: 'red' }}>{error}</p>}
         <p className={styles['sous-title']}>Over 200 stays</p>
-        <div className={styles['card-list']}>
-          {filterdCardData.map((i) => (
-            <Card
-              key={i.id}
-              image={i.image}
-              title={i.title}
-              label="Superhost"
-              description={i.description}
-              price={i.price}
-              rating={i.rating}
-              capacity={i.capacity}
-              superhost={i.superhost}
-            />
-          ))}
+        <div className={styles['card-container']}>
+          <div className={styles['card-list']}>
+            {filterdCardData.map((i) => (
+              <Card
+                key={i.id}
+                image={i.image}
+                title={i.title}
+                label="Superhost"
+                description={i.description}
+                price={i.price}
+                rating={i.rating}
+                capacity={i.capacity}
+                superhost={i.superhost}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </div>
